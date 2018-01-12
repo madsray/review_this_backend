@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
   def index
     @reviews = Review.all
 
-    render json: @reviews.to_json(include: :movies)
+    render json: @reviews
   end
 
   # GET /reviews/1
@@ -16,9 +16,10 @@ class ReviewsController < ApplicationController
   # POST /reviews
   def create
     @review = Review.new(review_params)
+    @review.movie_id = params[:movie_id]
 
     if @review.save
-      render json: @review, status: :created, location: @review
+      render json: @review, status: :created
     else
       render json: @review.errors, status: :unprocessable_entity
     end
