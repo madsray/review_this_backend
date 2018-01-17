@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   resources :reviews
-  resources :movies
+  resources :movies, only: [:create, :index, :show]
   resources :movies do
     resources :reviews, only: [:create]
   end
