@@ -25,18 +25,18 @@ class MoviesController < ApplicationController
   end
 
   # PATCH/PUT /movies/1
-  def update
-    if @movie.update(movie_params)
-      render json: @movie
-    else
-      render json: @movie.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @movie.update(movie_params)
+  #     render json: @movie
+  #   else
+  #     render json: @movie.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /movies/1
-  def destroy
-    @movie.destroy
-  end
+  # def destroy
+  #   @movie.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
